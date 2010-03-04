@@ -125,8 +125,8 @@ Grafico.BarGraph = Class.create(Grafico.BaseGraph, {
         hoverSet = this.paper.set(),
         text,
         hoverbar = this.paper.rect(x-(this.bar_width/2), this.y_padding_top, this.bar_width, this.options.height);
-
-    datalabel = datalabel[index].toString();
+	
+    datalabel = datalabel ? datalabel[index].toString() : '';
     text = this.paper.text(bargraph.attrs.x+(this.bar_width/2), bargraph.attrs.y-(this.options.font_size*1.5), datalabel);
     hoverbar.attr({fill: color, 'stroke-width': 0, stroke : color,opacity:0});
     text.attr({'font-size': this.options.font_size, fill:this.options.hover_text_color,opacity: 1});
