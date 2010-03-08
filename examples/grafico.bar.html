@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Stacked Bar Graph Example</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script src="../dependencies/prototype.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../dependencies/raphael.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../source/grafico.base.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../source/grafico.bar.js" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css" media="screen">
+  .example {
+    width: 500px;
+    height:300px;
+  }
+  </style>
+</head>
+<body>
+  <div id="graph" class="example"></div>
+
+  <script type="text/javascript" language="javascript" charset="utf-8">
+  Event.observe(window, 'load', function() {
+    var bargraph2 = new Grafico.StackedBarGraph($('graph'),
+    {
+      workload:       [8, 10, 6, 12, 7, 6, 9],
+      your_workload:  [6, 8, 4, 8, 12, 6, 2],
+      his_workload:   [2, 9, 12, 7, 8, 9, 8]
+    },
+    {
+      labels:               ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      colors:               { workload: ['#444444', '#666666', '#888888', '#AAAAAA','#CCCCCC', '#EEEEEE'], your_workload: 'green', his_workload: 'blue'},
+      stroke:               'black',
+      'stroke-width':       "0.5pt",
+      show_vertical_grid:   false,
+      show_horizontal_grid: true,
+      show_ticks:           false,
+      hover_color:          "#CC0000",
+      datalabels:           { workload: ["fish", "banana", "March", "April", "May", "June", "July"],
+        your_workload: ["turnip", "February", "March", "April", "May", "June", "July"],
+        his_workload: ["January", "February", "March", "April", "May", "June", "July"]}
+    });
+  });
+
+  </script>
+
+</body>
+</html>
+

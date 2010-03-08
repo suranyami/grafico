@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Line Graph</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script src="../dependencies/prototype.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../dependencies/raphael.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../source/grafico.base.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../source/grafico.line.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../source/grafico.bar.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../source/grafico.spark.js" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css" media="screen">
+    .example {
+    	width: 500px;
+    	height:300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="graph" class="example"></div>
+
+  <script>
+  Event.observe(window, 'load', function() {
+    var linegraph3 = new Grafico.LineGraph($('graph'),
+    {
+      workload:       [8, 10, 6, 12, 7, 6, 9],
+      your_workload:  [6, 8, 4, 8, 12, 6, 2],
+      his_workload:   [2, 9, 12, 7, 8, 9, 8]
+    },
+    {
+      colors: {
+        workload:       "#880000",
+        your_workload:  "#008800",
+        his_workload:   "#000077"
+      },
+      markers: "circle",
+      hover_color: "#000",
+      hover_text_color: "#fff",
+      show_vertical_grid: false,
+      show_horizontal_grid: true,
+      show_ticks: false,
+      draw_hovers : true,
+      datalabels: {
+        workload:       "My workload",
+        your_workload:  "Your workload",
+        his_workload:   "His workload"
+      }
+    });
+  });
+  </script>
+
+  <p></p>
+
+<!-- Log output -->
+<div id="testlog"> </div>
+
+
+<!-- Tests follow -->
+<script type="text/javascript" language="javascript" charset="utf-8">
+// <![CDATA[
+
+new Test.Unit.Runner({
+  setup: function() {},
+  teardown: function() {},
+
+  test_line_graph: function() { with(this) {
+
+
+    // assertEqual(0, normaliser.step);
+    }},
+  });
+  // ]]>
+  </script>
+
+<!-- Test elements will be inserted after this -->
+
+</body>
+</html>
+
