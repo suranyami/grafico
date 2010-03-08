@@ -9,6 +9,7 @@ h3. Supported graph types:
 * Stacked area graphs
 * Stream graphs
 * Bar graphs
+* Stacked Bar graphs
 * Horizontal bar graphs
 * Sparklines
 * Sparkbars
