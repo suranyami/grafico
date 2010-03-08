@@ -485,7 +485,7 @@ drawLines: function (label, color, data, datalabel, element, graphindex) {
 		}
 	}.bind(this));
 
-    if(this.options.area && this.options.stroke_width > 0) {
+    if (this.options.area && this.options.stroke_width > 0) {
       cursor2 = this.paper.path().attr({stroke: color, 'stroke-width': this.options.stroke_width + "px"});
       coords.remove(0);
       coords.remove(-1);
@@ -549,12 +549,12 @@ drawLines: function (label, color, data, datalabel, element, graphindex) {
     var cursor = this.paper.path().attr({stroke: this.options.label_color});
 
     //horizontal
-    cursor.moveTo(parseInt(this.x_padding_left, 10)-0.5,                    this.options.height - parseInt(this.y_padding_bottom, 10) + 0.5);
-    cursor.lineTo(parseInt(this.graph_width + this.x_padding_left, 10)-0.5, this.options.height - parseInt(this.y_padding_bottom, 10) + 0.5);
+    cursor.moveTo(parseInt(this.x_padding_left, 10) - 0.5, this.options.height - parseInt(this.y_padding_bottom, 10) + 0.5);
+    cursor.lineTo(parseInt(this.graph_width + this.x_padding_left, 10) - 0.5, this.options.height - parseInt(this.y_padding_bottom, 10) + 0.5);
 
     //vertical
-    cursor.moveTo(parseInt(this.x_padding_left, 10)-0.5, parseInt(this.options.height - this.y_padding_bottom, 10)+0.5);
-    cursor.lineTo(parseInt(this.x_padding_left, 10)-0.5, parseInt(this.y_padding_top, 10));
+    cursor.moveTo(parseInt(this.x_padding_left, 10) - 0.5, parseInt(this.options.height - this.y_padding_bottom, 10) + 0.5);
+    cursor.lineTo(parseInt(this.x_padding_left, 10) - 0.5, parseInt(this.y_padding_top, 10));
   },
 
   makeValueLabels: function (steps) {

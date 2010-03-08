@@ -169,14 +169,14 @@ Grafico.BarGraph = Class.create(Grafico.BaseGraph, {
 Grafico.StackedBarGraph = Class.create(Grafico.BarGraph, {
   chartDefaults: function () {
     return {
-		'stroke-width': '0',
-		'stroke-opacity': '0',
-		stroke : "black",
-		opacity: 100,
-		bar : true,
-		plot_padding : 0,
-		stacked: true,
-		stacked_fill: true,
+			'stroke-width': '0',
+			'stroke-opacity': '0',
+			stroke : "black",
+			opacity: 100,
+			bar : true,
+			plot_padding : 0,
+			stacked: true,
+			stacked_fill: true
     };
   },
 
@@ -263,6 +263,7 @@ Grafico.StackedBarGraph = Class.create(Grafico.BarGraph, {
     }
 
   },
+
   drawPlot: function (index, cursor, x, y, color, coords, datalabel, element, graphindex) {
     var start_y = this.options.height - this.y_padding_bottom - (this.zero_value * (this.graph_height / this.y_label_count)),
         lastcolor = this.options.bargraph_lastcolor,
@@ -302,10 +303,12 @@ Grafico.StackedBarGraph = Class.create(Grafico.BarGraph, {
 		hy = bargraph.attrs.y,
 		hw = this.bar_width,
 		hh = bargraph.attrs.height;
+	
     var hover_color = this.options.hover_color || color,
         hoverSet = this.paper.set(),
         text,
         hoverbar = this.paper.rect(hx, hy, hw, hh);
+
     datalabel = datalabel && datalabel.length > index ? datalabel[index].toString() : '';
     text = this.paper.text(bargraph.attrs.x + (this.bar_width / 2), bargraph.attrs.y - (this.options.font_size * 1.5), datalabel);
     hoverbar.attr({fill: color, 'stroke-width': 0, stroke : color, opacity:0});
